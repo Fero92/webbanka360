@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>365.bank - Tvoja digitálna banka</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom colors as CSS variables */
+        :root {
+            --brand-dark-blue: #004155;
+            --brand-teal: #45dbcc;
+        }
+        
+        /* OOCSS styles */
+        .o-button {
+            @apply rounded-full py-2 px-6 font-medium transition-all duration-200;
+        }
+        
+        .o-button--primary {
+            background-color: var(--brand-teal);
+            color: white;
+        }
+        
+        .o-button--primary:hover {
+            background-color: white;
+            color: var(--brand-dark-blue);
+        }
+        
+        .o-button--secondary {
+            background-color: white;
+            color: var(--brand-dark-blue);
+            border: 1px solid var(--brand-teal);
+        }
+        
+        .o-button--secondary:hover {
+            background-color: var(--brand-teal);
+            color: white;
+        }
+        
+        .o-card {
+            @apply rounded-lg overflow-hidden shadow-md;
+        }
+        
+        .o-section {
+            @apply py-12 px-4 md:px-8 lg:px-16;
+        }
+        
+        /* Custom utility classes for brand colors */
+        .bg-brand-dark {
+            background-color: var(--brand-dark-blue);
+        }
+        
+        .bg-brand-teal {
+            background-color: var(--brand-teal);
+        }
+        
+        .text-brand-dark {
+            color: var(--brand-dark-blue);
+        }
+        
+        .text-brand-teal {
+            color: var(--brand-teal);
+        }
+        
+        .hover\:bg-brand-dark:hover {
+            background-color: var(--brand-dark-blue);
+        }
+        
+        .hover\:bg-brand-teal:hover {
+            background-color: var(--brand-teal);
+        }
+        
+        .hover\:text-brand-dark:hover {
+            color: var(--brand-dark-blue);
+        }
+        
+        .hover\:text-brand-teal:hover {
+            color: var(--brand-teal);
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Header -->
+    <header class="header bg-white shadow-sm">
+        <div class="header__container container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="header__logo">
+                <a href="#" class="flex items-center">
+                    <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="365.bank logo" class="h-8">
+                </a>
+            </div>
+            
+            <div class="header__actions flex items-center space-x-4">
+                <button class="o-button o-button--primary text-sm md:text-base h-[50px] rounded-4xl transition-all duration-100 ease-in-out py-0 px-6 border-2">Stiahnuť appku</button>
+                <button class="o-button o-button--secondary text-sm md:text-base">Internet banking</button>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="nav border-t border-gray-100">
+            <div class="nav__container container mx-auto px-4">
+                <ul class="nav__menu flex flex-wrap text-sm overflow-x-auto whitespace-nowrap md:whitespace-normal">
+                    <li class="nav__item"><a href="#" class="block py-3 px-4 text-brand-dark hover:text-brand-teal">E-shop poistenie</a></li>
+                    <li class="nav__item"><a href="#" class="block py-3 px-4 text-brand-dark hover:text-brand-teal">Účty a platobný</a></li>
+                    <li class="nav__item"><a href="#" class="block py-3 px-4 text-brand-dark hover:text-brand-teal">Pôžičky a hypotéky</a></li>
+                    <li class="nav__item"><a href="#" class="block py-3 px-4 text-brand-dark hover:text-brand-teal">Sporenie a investovanie</a></li>
+                    <li class="nav__item"><a href="#" class="block py-3 px-4 text-brand-dark hover:text-brand-teal">Poistenie</a></li>
+                    <li class="nav__item"><a href="#" class="block py-3 px-4 text-brand-dark hover:text-brand-teal">O nás</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-brand-dark text-white overflow-hidden relative">
+        <div class="hero__container container mx-auto px-5 py-13 md:py-16 flex flex-col md:flex-row items-center justify-between ml-3.5">
+            <div class="hero__content max-w-lg z-10 ">
+                <h1 class="hero__title text-2xl md:text-3xl font-bold mb-8 bg-[#45dbcc] flex px-1.5">Zarábaj s úrokom až 3 % ročne</h1>
+                <p class="hero__text mb-6  flex px-1.5">Čo to značí, ak nerobíš čo chceš, len čakáš čo bude druhý deň? Áno, aj ty si zaslúžiš výnimočný život, tak sa teraz postaraj o svoje peniaze. Sprav si účet s úrokovým sporením a 365 pointami, lebo čo teraz?</p>
+                <button class="o-button o-button--primary h-[50px] rounded-4xl transition-all duration-100 ease-in-out py-0 px-6 border-2">Idem do toho</button>
+            </div>
+            <div class="hero__image relative">
+                <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="Ľudia so sporením" class="max-w-xs md:max-w-sm">
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome o-section bg-white text-center">
+        <div class="welcome__container container mx-auto">
+            <h2 class="welcome__title text-2xl md:text-3xl font-bold mb-2 text-brand-dark">Ahoj, sme 365.bank</h2>
+            <h3 class="welcome__subtitle text-xl md:text-2xl font-bold mb-6 text-brand-dark">A chceme byť tvoja banka</h3>
+            <p class="welcome__text max-w-2xl mx-auto mb-8">
+                Dobre, úprimne, jasné? Nie. V prípade online sveta sme banka, ktorá tvrdí banku, 
+                ale môžeš to aj, nájsť celú cestu radšej na poctivý mailing center. Však, aj to je 
+                čo pre teba môžeme? Posúdiž si, ktoré služby využiješ teraz v banke na jablku.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features o-section bg-gray-50">
+        <div class="features__container container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Feature 1 -->
+            <div class="feature o-card bg-white">
+                <div class="feature__content p-6">
+                    <h3 class="feature__title font-bold mb-3 text-brand-dark">APP</h3>
+                    <p class="feature__text mb-4">Získaj náš funkčný bankový mobil na iPhone a Android. Spravuj aplikáciu a kontrolujte upozornenia popri svojich bankových účtoch.</p>
+                    <a href="#" class="feature__link text-brand-teal font-medium hover:text-brand-dark">Viac info</a>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature o-card bg-purple-900 text-white">
+                <div class="feature__content p-6">
+                    <h3 class="feature__title font-bold mb-3">PLATBA</h3>
+                    <p class="feature__text mb-4">Platíte si banku, tak si aj odmenou želáte a výhodou prišlého kariet. Posielajte peniaze ľuďom a pešie bez odliatí.</p>
+                    <a href="#" class="feature__link text-white font-medium hover:underline">CHCEM SI TO</a>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature o-card bg-brand-teal text-white">
+                <div class="feature__content p-6">
+                    <h3 class="feature__title font-bold mb-3">PODNIKATEĽSKÁ BANKA</h3>
+                    <p class="feature__text mb-4">Jediná digitálna banka, v ktorej je nadštandardový servis.</p>
+                    <a href="#" class="feature__link text-white font-medium hover:text-brand-dark hover:bg-white px-2 py-1 rounded">AKO NÁS VYUŽIŤ</a>
+                </div>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature o-card bg-brand-dark text-white">
+                <div class="feature__content p-6">
+                    <h3 class="feature__title font-bold mb-3">KURZOVÝ LÍSTOK</h3>
+                    <div class="feature__rates grid grid-cols-3 gap-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-sm">USD</p>
+                            <p class="font-bold">0.921</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm">GBP</p>
+                            <p class="font-bold">0.851</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm">CHF</p>
+                            <p class="font-bold">0.823</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card Promo Section -->
+    <section class="card-promo o-section bg-white flex flex-col md:flex-row items-center gap-8">
+        <div class="card-promo__image w-full md:w-1/3">
+            <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="365.bank karta" class="mx-auto max-w-xs">
+        </div>
+        <div class="card-promo__content w-full md:w-2/3">
+            <h2 class="card-promo__title text-2xl font-bold mb-4 text-brand-dark">Stiahni si apku a staň sa súčasťou 365.bank</h2>
+            <p class="card-promo__text mb-6">Silni tú hneďku rýbiu masku na svojej obrazovke s jednoduchým mobilní aplikáciu 365.bank. Tým si pozdĺž ai pár eurov, na čo si nájdeš nápady, nikomu si nevadíš…</p>
+            <button class="o-button o-button--primary">Stiahnutí mobilnej aplikácie</button>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us o-section bg-gray-50">
+        <div class="why-us__container container mx-auto text-center mb-10">
+            <h2 class="why-us__title text-2xl md:text-3xl font-bold mb-6 text-brand-dark">Prečo práve 365-ka?</h2>
+            <p class="why-us__text max-w-2xl mx-auto">
+                Tvoja investícia, len bez jednej je TVÉ banky. Si rozvíš rádiať, alebo si nepôsobí váš. Tvár len máte, ale aj vyčlení od polovičky. Vyberajú z bankovatov bezhotovostne investíciám. Si významných citu k temnote meť skôrok.
+            </p>
+        </div>
+        
+        <div class="why-us__features grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
+            <!-- Feature 1 -->
+            <div class="why-us__feature bg-purple-100 rounded-lg p-6 text-center">
+                <div class="why-us__icon mb-4">
+                    <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="" class="h-12 mx-auto">
+                </div>
+                <h3 class="why-us__feature-title font-bold mb-2 text-brand-dark">DEPOZITÁR FAKTOV</h3>
+                <p class="why-us__feature-text">Ustav mesiacov dobré nie má zdržať ľudí na čírení svojich nahrávok.. klidne prejdi.</p>
+                <a href="#" class="why-us__feature-link block mt-4 text-purple-700 font-medium">Viac podrobne</a>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="why-us__feature bg-brand-teal bg-opacity-20 rounded-lg p-6 text-center">
+                <div class="why-us__icon mb-4">
+                    <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="" class="h-12 mx-auto">
+                </div>
+                <h3 class="why-us__feature-title font-bold mb-2 text-brand-dark">BEZKONTAKTNÉ ZĽAVY</h3>
+                <p class="why-us__feature-text">Pravdaže, robota na novom bezpečná, Za bezúčelný prístupí, oslovený radšej príznakom.</p>
+                <a href="#" class="why-us__feature-link block mt-4 bg-brand-teal text-white hover:bg-white hover:text-brand-dark py-1 px-3 rounded-full inline-block transition-all duration-200">Ako nás využiť</a>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="why-us__feature bg-brand-teal bg-opacity-20 rounded-lg p-6 text-center">
+                <div class="why-us__icon mb-4">
+                    <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="" class="h-12 mx-auto">
+                </div>
+                <h3 class="why-us__feature-title font-bold mb-2 text-brand-dark">LEHOTY ZÍSKA BEZHOTOVOSTNE</h3>
+                <p class="why-us__feature-text">Mesiacov si bezúčelnosti s vašim lepšie prahnieme odpoveď, náš to z posledy zálohy.</p>
+                <a href="#" class="why-us__feature-link block mt-4 bg-brand-teal text-white hover:bg-white hover:text-brand-dark py-1 px-3 rounded-full inline-block transition-all duration-200">Zmeňte predpisy</a>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="why-us__feature bg-pink-100 rounded-lg p-6 text-center">
+                <div class="why-us__icon mb-4">
+                    <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="" class="h-12 mx-auto">
+                </div>
+                <h3 class="why-us__feature-title font-bold mb-2 text-brand-dark">KOMPLETNÉ BANKU AŠ DOM</h3>
+                <p class="why-us__feature-text">Vyhlídek si 2358 eurá so svojou vyčlenenou odmenou milost, do istého vyhlídek vnútorný nárok, do istejie.</p>
+                <a href="#" class="why-us__feature-link block mt-4 text-pink-700 font-medium">Zistiť o nás</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog o-section bg-white">
+        <div class="blog__header flex justify-between items-center mb-8 container mx-auto">
+            <h2 class="blog__title text-2xl font-bold text-brand-dark">Najnovšie články</h2>
+            <a href="#" class="blog__more text-brand-teal font-medium hover:text-brand-dark">Viac</a>
+        </div>
+        
+        <div class="blog__articles grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto">
+            <!-- Article 1 -->
+            <div class="blog__article o-card">
+                <div class="blog__article-content bg-purple-900 text-white p-6 h-full flex flex-col">
+                    <h3 class="blog__article-title font-bold mb-4">Ako si pomerne rešil finančné neistotu? Prečíta, ktorý ide vypadnú po litotách</h3>
+                    <p class="blog__article-text mb-6 flex-grow">Tvoje peniaze vyhrávaš znojšť ako drob z trička, ktorých ti preniesou aj čím, dôvtip by bolo...</p>
+                    <a href="#" class="blog__article-link text-white font-medium hover:underline">Čítať viac</a>
+                </div>
+            </div>
+            
+            <!-- Article 2 -->
+            <div class="blog__article o-card">
+                <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="Rodina s deťmi" class="w-full h-48 object-cover">
+                <div class="blog__article-content p-4">
+                    <p class="blog__article-date text-sm text-gray-500 mb-2">12. septembra 2024, Marek</p>
+                    <h3 class="blog__article-title font-bold mb-2 text-brand-dark">Chceš byť pre kamaráta tým, čo si praje? Prečo si z toho znepokojený? Keď tie vie…</h3>
+                    <a href="#" class="blog__article-link text-brand-teal font-medium hover:text-brand-dark mt-2 block">Čítať viac</a>
+                </div>
+            </div>
+            
+            <!-- Article 3 -->
+            <div class="blog__article o-card">
+                <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="Žena s notebookom" class="w-full h-48 object-cover">
+                <div class="blog__article-content p-4">
+                    <p class="blog__article-date text-sm text-gray-500 mb-2">26. September 2024, Lucia, Žofka</p>
+                    <h3 class="blog__article-title font-bold mb-2 text-brand-dark">Kedy by sme nemohli rozumieť?</h3>
+                    <p class="blog__article-text mb-3">Stránky prevádzka posledný základy na tvoju šialku zmeniť význam iba... ♥️...</p>
+                    <a href="#" class="blog__article-link text-brand-teal font-medium hover:text-brand-dark mt-2 block">Čítať viac</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-brand-dark text-white pt-12 pb-6">
+        <div class="footer__container container mx-auto px-4">
+            <div class="footer__sections grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Contact Section -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title font-bold mb-4">KONTAKTNÉ ÚDAJE</h3>
+                    <p class="footer__contact-phone font-bold mb-2">0850 365 365</p>
+                    <ul class="footer__contact-list space-y-2">
+                        <li>Klientské centrum dostupné:</li>
+                        <li>Po-Pi: 8:00-20:00</li>
+                        <li>Overenie totožnosti</li>
+                        <li>Kontaktný formulár</li>
+                    </ul>
+                </div>
+                
+                <!-- Products Section -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title font-bold mb-4">NAŠE PRODUKTY</h3>
+                    <ul class="footer__menu space-y-2">
+                        <li><a href="#" class="hover:text-brand-teal">Účty</a></li>
+                        <li><a href="#" class="hover:text-brand-teal">Pôžičky a hypotéky</a></li>
+                        <li><a href="#" class="hover:text-brand-teal">Sporenie a investovanie</a></li>
+                        <li><a href="#" class="hover:text-brand-teal">Poistenie</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Bank Info Section -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title font-bold mb-4">DÔLEŽITÉ INFORMÁCIE</h3>
+                    <ul class="footer__menu space-y-2">
+                        <li><a href="#" class="hover:text-brand-teal">Poplatky</a></li>
+                        <li><a href="#" class="hover:text-brand-teal">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-teal">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Section -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title font-bold mb-4">NÁJDI NÁS ONLINE</h3>
+                    <div class="footer__social flex space-x-4 mb-4">
+                        <a href="#" class="hover:text-brand-teal">Facebook</a>
+                        <a href="#" class="hover:text-brand-teal">Instagram</a>
+                        <a href="#" class="hover:text-brand-teal">LinkedIn</a>
+                    </div>
+                    <div class="footer__apps flex space-x-4 mt-8">
+                        <a href="#" class="footer__app-link">
+                            <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="App Store" class="h-10">
+                        </a>
+                        <a href="#" class="footer__app-link">
+                            <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png" alt="Google Play" class="h-10">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom border-t border-teal-800 pt-6 text-sm text-brand-teal">
+                <p class="mb-4">
+                    © 2024 Všetky práva vyhradené 365.bank. SWIFT/BIC: POBNSKBA, IČO: 31340890, Zapísaná v obchodnom registri 
+                    Okresného súdu Bratislava I, oddiel Sa, vložka č. 501/B
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

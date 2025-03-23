@@ -1,0 +1,76 @@
+/* Custom colors as CSS variables */
+:root {
+    --brand-dark-blue: #004155;
+    --brand-teal: #45dbcc;
+}
+
+/* OOCSS styles */
+.o-button {
+    @apply rounded-full py-2 px-6 font-medium transition-all duration-200;
+}
+
+.o-button--primary {
+    background-color: var(--brand-teal);
+    color: white;
+}
+
+.o-button--primary:hover {
+    background-color: white;
+    color: var(--brand-dark-blue);
+}
+
+.o-button--secondary {
+    background-color: white;
+    color: var(--brand-dark-blue);
+    border: 1px solid var(--brand-teal);
+}
+
+.o-button--secondary:hover {
+    background-color: var(--brand-teal);
+    color: white;
+}
+
+.o-card {
+    @apply rounded-lg overflow-hidden shadow-md;
+}
+
+.o-section {
+    @apply py-12 px-4 md:px-8 lg:px-16;
+}
+
+/* Custom utility classes for brand colors */
+.bg-brand-dark {
+    background-color: var(--brand-dark-blue);
+}
+
+.bg-brand-teal {
+    background-color: var(--brand-teal);
+}
+
+.text-brand-dark {
+    color: var(--brand-dark-blue);
+}
+
+.text-brand-teal {
+    color: var(--brand-teal);
+}
+
+.hover\:bg-brand-dark:hover {
+    background-color: var(--brand-dark-blue);
+}
+
+.hover\:bg-brand-teal:hover {
+    background-color: var(--brand-teal);
+}
+
+.hover\:text-brand-dark:hover {
+    color: var(--brand-dark-blue);
+}
+
+.hover\:text-brand-teal:hover {
+    color: var(--brand-teal);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
